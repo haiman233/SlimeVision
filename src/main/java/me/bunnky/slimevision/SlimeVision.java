@@ -10,9 +10,10 @@ import org.bstats.bukkit.Metrics;
 import org.bstats.charts.AdvancedPie;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import org.bukkit.Bukkit;
 import fr.skytasul.glowingentities.GlowingBlocks;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import me.bunnky.slimevision.items.slimeeyes.SlimeEye;
 import me.bunnky.slimevision.slimefun.Setup;
 
