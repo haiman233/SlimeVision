@@ -62,10 +62,14 @@ public class SlimeVision extends JavaPlugin implements SlimefunAddon {
     }
 
     public void tryUpdate() {
-        if (getConfig().getBoolean("auto-update") &&
-                getDescription().getVersion().startsWith("Build")) {
-            new GuizhanBuildsUpdater(this, getFile(), "SlimefunGuguProject", "SlimeVision", "master", false).start();
-        }
+        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
+            if (Bukkit.getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
+                try {
+                    GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "SlimeVision", "master");
+                } catch (NoClassDefFoundError | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
     }
 
     public static void consoleMsg(@Nonnull String string) {
