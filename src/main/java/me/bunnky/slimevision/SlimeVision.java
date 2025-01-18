@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.skytasul.glowingentities.GlowingBlocks;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.BlobBuildUpdater;
+import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 import me.bunnky.slimevision.items.slimeeyes.SlimeEye;
 import me.bunnky.slimevision.slimefun.Setup;
 
@@ -62,10 +62,9 @@ public class SlimeVision extends JavaPlugin implements SlimefunAddon {
     }
 
     public void tryUpdate() {
-        if (getConfig().getBoolean("options.auto-update", true)
-            && getDescription().getVersion().startsWith("Dev - ")
-        ) {
-            new BlobBuildUpdater(this, getFile(), "SlimeVision", "Dev").start();
+        if (getConfig().getBoolean("auto-update") &&
+                getDescription().getVersion().startsWith("Build")) {
+            new GuizhanBuildsUpdater(this, getFile(), "SlimefunGuguProject", "SlimeVision", "master", false).start();
         }
     }
 
