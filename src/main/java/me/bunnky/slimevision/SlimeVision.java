@@ -70,6 +70,7 @@ public class SlimeVision extends JavaPlugin implements SlimefunAddon {
                     e.printStackTrace();
                 }
             }
+        }
     }
 
     public static void consoleMsg(@Nonnull String string) {
