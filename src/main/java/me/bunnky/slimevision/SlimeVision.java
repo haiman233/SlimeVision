@@ -67,7 +67,7 @@ public class SlimeVision extends JavaPlugin implements SlimefunAddon {
             if (Bukkit.getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
                 try {
                     GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "SlimeVision", "master");
-                } catch (NoClassDefFoundError | ClassNotFoundException e) {
+                } catch (NoClassDefFoundError e) {
                     e.printStackTrace();
                 }
             }
