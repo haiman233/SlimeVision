@@ -80,7 +80,7 @@ public class SlimeScribe extends SlimeEyeInverted {
         Player p = e.getPlayer();
 
         if (p.getInventory().firstEmpty() == -1) {
-            p.sendMessage("§cI库存已满。");
+            p.sendMessage("§c库存已满。");
             return;
         }
 
